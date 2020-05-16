@@ -8,9 +8,10 @@ public class ReaderFactory {
         if (filePath.endsWith(".csv")){
             return new CSVReader();
         }
-        /*
-        TO DO : CSVreader, EXCELREADER
-         */
+
+        if (filePath.endsWith(".xlsx")){
+            return new ExcelReader();
+        }
 
         return null;
 
