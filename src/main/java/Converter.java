@@ -11,8 +11,9 @@ public class Converter {
         List<Map<String, Object>> list = reader.read(sourceFilePath);
         System.out.println(list);
 
-        if (reader instanceof JSONReader) {
-            System.out.println("Działa, mam obiekt JSONReader");
-        }
+        WriterFactory writerFactory = new WriterFactory();
+        Writer writer = writerFactory.produce(outputFilePath);
+        writer.write(outputFilePath,list);
+
     }
 }
